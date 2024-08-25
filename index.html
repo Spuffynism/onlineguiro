@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>online guiro</title>
+    <style>
+        .stick {
+            height: 100px;
+            width: 100px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Online guiro</h1>
+<img class="stick" src="stick.webp" alt="stick" onclick="play()"/>
+<img src="guiro.jpg" alt="guiro" onclick="play()"/>
+<audio id="audio" src="guiro.mp3"></audio>
+<script>
+    function play() {
+        document.getElementById("audio").play();
+    }
+    var cursor = document.querySelector('.stick');
+
+    function moveStick(e) {
+        cursor.style.left = e.clientX;
+        cursor.style.top = e.clientY;
+    }
+
+    window.addEventListener('mousemove', moveStick)
+</script>
+</body>
+</html>
